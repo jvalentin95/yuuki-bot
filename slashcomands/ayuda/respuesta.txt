@@ -1,0 +1,22 @@
+const Discord = require("discord.js")
+module.exports={
+    name:"dile",
+    description:"dile",
+    options:[{
+        name:"user",
+        description:"nombre de la mension",
+        type:6,
+        required:true,
+    }],
+    run: async(client,int,args)=>{
+        const user = int.options.getUser('user');
+        const persona = int.user;
+        let embed = new Discord.EmbedBuilder() 
+        .setColor(0xffc936)
+        .setTitle("ANYA TE DICE")
+        .setDescription("oie <@"+user+"> me dice el <@"+persona+"> que eres puto")
+        .setImage("https://cdn.discordapp.com/attachments/1005151310494048367/1005968530501533696/unknown.png")
+        return int.reply({ embeds: [embed] });
+        //await int.reply({content:"puto tu",ephemeral:false});
+    }
+}
